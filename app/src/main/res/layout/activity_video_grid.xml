@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoGridActivity">
+
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/dp60"
+        android:layout_height="@dimen/dp60"
+        android:indeterminate="true"
+        app:cpb_color="@color/fastlane_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="Phim Hành Động"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp32"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/dp42"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginLeft="@dimen/dp10"
+        android:background="@drawable/selector_back"
+        android:padding="@dimen/dp5"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <android.support.v17.leanback.widget.VerticalGridView
+        android:id="@+id/trv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp10"
+        android:nextFocusUp="@id/btn_back"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+</android.support.constraint.ConstraintLayout>

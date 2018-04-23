@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:focusable="true"
+    android:paddingLeft="@dimen/dp20"
+    android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp272"
+        android:layout_height="@dimen/dp153"
+        android:layout_marginBottom="@dimen/dp5"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="@dimen/dp272"
+        android:layout_height="@dimen/dp25"
+        android:layout_marginTop="@dimen/dp5"
+        android:ellipsize="marquee"
+        android:freezesText="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingRight="@dimen/dp8"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Sát Thủ Bắc Kinh - Tập 45 - 11:30:00 - 17/03/2017"
+        android:textColor="#cfcfcf"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_goneMarginTop="14dp" />
+
+    <TextView
+        android:id="@+id/title_sub"
+        android:layout_width="@dimen/dp272"
+        android:lines="1"
+        android:layout_height="wrap_content"
+        android:text="Sát Thủ Bắc Kinh"
+        android:textColor="#737373"
+        android:textSize="@dimen/sp13"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+</android.support.constraint.ConstraintLayout>

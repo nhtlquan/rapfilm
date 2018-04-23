@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_gradient_start"
+    android:orientation="vertical">
+
+    <com.google.android.exoplayer.AspectRatioFrameLayout
+        android:id="@id/video_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <SurfaceView
+            android:id="@id/surface_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center" />
+
+        <View
+            android:id="@id/shutter"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/black"
+            android:visibility="gone" />
+
+        <com.google.android.exoplayer.text.SubtitleLayout
+            android:id="@id/subtitles"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@id/subtitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/dp16"
+            android:paddingLeft="@dimen/dp56"
+            android:paddingRight="@dimen/dp56"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp21"
+            android:textStyle="bold" />
+    </com.google.android.exoplayer.AspectRatioFrameLayout>
+
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/loading"
+        android:layout_width="@dimen/dp94"
+        android:layout_height="@dimen/dp94"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:cpb_color="@color/fastlane_background"/>
+</FrameLayout>

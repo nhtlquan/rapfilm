@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp230"
+        android:layout_height="@dimen/dp350"
+        android:layout_marginBottom="@dimen/dp8"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <LinearLayout
+        android:id="@+id/iconLive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp6"
+        android:clickable="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIVE"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="@dimen/dp230"
+        android:layout_height="@dimen/dp25"
+        android:layout_marginTop="@dimen/dp8"
+        android:ellipsize="marquee"
+        android:freezesText="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingRight="@dimen/dp8"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Sát Thủ Bắc Kinh - Tập 45 - 11:30:00 - 17/03/2017"
+        android:textColor="#cfcfcf"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconLive"
+        app:layout_goneMarginTop="@dimen/dp14" />
+
+    <TextView
+        android:id="@+id/title_sub"
+        android:layout_width="@dimen/dp230"
+        android:lines="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="Sát Thủ Bắc Kinh"
+        android:textColor="#737373"
+        android:textSize="@dimen/sp18"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp230"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title_sub">
+
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:text="00:00:00"
+            android:textColor="#cfcfcf"
+            android:textSize="@dimen/sp15" />
+
+        <TextView
+            android:id="@+id/tv_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp5"
+            android:text="HD"
+            android:textColor="#cfcfcf"
+            android:textSize="@dimen/sp15" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

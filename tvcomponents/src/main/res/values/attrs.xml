@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+    <declare-styleable name="NavigationDrawerView">
+        <attr name="categoryWidthSize" format="dimension" />
+        <attr name="categoryBackground" format="reference" />
+        <attr name="contentBackground" format="reference" />
+        <attr name="categoryLeftBehind" format="dimension" />
+        <attr name="canOpenNav" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FocusZoomableLayout">
+        <attr name="focusScaleFactor" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewCustomZoomable">
+        <attr name="scale" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="FlyingBorderView">
+        <attr name="focusDrawable" format="reference" />
+        <attr name="focusScale" format="float" />
+        <attr name="focusBoxPadding" format="dimension" />
+        <attr name="focusBoxPaddingTop" format="dimension" />
+        <attr name="focusBoxPaddingBottom" format="dimension" />
+        <attr name="focusBoxPaddingLeft" format="dimension" />
+        <attr name="focusBoxPaddingRight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TvRecyclerView">
+        <attr name="leftScrollingEdge" format="dimension" />
+        <attr name="rightScrollingEdge" format="dimension" />
+        <attr name="upScrollingEdge" format="dimension" />
+        <attr name="downScrollingEdge" format="dimension" />
+        <attr name="scrollingEdge" format="dimension" />
+        <attr name="scrollMode" />
+        <attr name="scrollPositionStick" format="integer" />
+    </declare-styleable>
+
+    <attr name="scrollMode">
+        <enum name="scrollOverEdge" value="0" />
+        <enum name="scrollCenteringPosition" value="2" />
+        <enum name="scrollStickAtEdge" value="1" />
+        <enum name="scrollStickPosition" value="3" />
+        <enum name="scrollForwardStickPosition" value="4" />
+    </attr>
+
+</resources>

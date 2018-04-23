@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoGridActivity">
+
+
+    <android.support.v17.leanback.widget.SearchEditText
+        android:id="@+id/edt_search"
+        fontPath="fonts/Roboto-Italic.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80"
+        android:layout_marginBottom="@dimen/dp20"
+        android:layout_marginLeft="@dimen/dp100"
+        android:layout_marginRight="@dimen/dp100"
+        android:background="@drawable/background_search"
+        android:drawableRight="@drawable/ic_search_view"
+        android:focusable="true"
+        android:paddingRight="@dimen/dp20"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:hint="key word"
+        android:paddingLeft="@dimen/dp20"
+        android:textColorHint="#898989"
+        android:textSize="@dimen/sp28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_search"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/test"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="Tìm kiếm"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+</android.support.constraint.ConstraintLayout>

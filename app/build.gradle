@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.lequan.film"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        renderscriptTargetApi 26
+        renderscriptSupportModeEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.orhanobut:hawk:1.22'
+    implementation 'com.parse:parse-android:1.13.3'
+    debugImplementation 'com.parse:parseinterceptors:0.0.2'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.8.0@aar'
+    implementation 'cz.msebera.android:httpclient:4.4.1.2'
+    implementation 'commons-codec:commons-codec:1.11'
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.google.android.exoplayer:exoplayer:r1.5.11'
+    implementation 'com.github.bumptech.glide:okhttp-integration:1.5.0@aar'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation files('libs/juniversalchardet-1.0.3.jar')
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.android.support:preference-v14:25.3.1'
+    implementation 'com.android.support:preference-v7:25.3.1'
+    implementation 'com.android.support:preference-leanback-v17:25.0.1'
+    implementation project(':tvcomponents')
+    compile 'jp.wasabeef:blurry:2.1.1'
+    implementation project(':library')
+    implementation project(':utils-v4')
+    compile "uk.co.chrisjenx:calligraphy:2.2.0"
+    compile "com.squareup.okhttp3:logging-interceptor:3.8.0"
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+    compile "com.squareup.retrofit2:converter-gson:2.3.0"
+}

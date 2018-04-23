@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="Settings Example" android:summary="This is a dummy activitiy only to show case how to build a settings in an application. Changing configurations in this example doesn't affect anything."
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <CheckBoxPreference android:title="Automatic date  &amp; time" android:key="prefs_date_time_automatic" android:defaultValue="true" android:summaryOn="Off" android:summaryOff="On" android:disableDependentsState="true" />
+    <Preference android:title="Date" android:key="prefs_date" android:summary="01/01/1970" android:dependency="prefs_date_time_automatic" />
+    <Preference android:title="Time" android:key="prefs_time" android:summary="00:43 PM" android:dependency="prefs_date_time_automatic" />
+    <CheckBoxPreference android:title="Automatic time zone" android:key="prefs_date_time_use_timezone" android:summary="Use network provided time zone" android:defaultValue="true" android:disableDependentsState="true" />
+    <Preference android:title="Time zone" android:summary="GMT 07:00 Pacific Daylight Time" android:dependency="prefs_date_time_use_timezone" />
+</PreferenceScreen>

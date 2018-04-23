@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/dp60"
+        android:layout_height="@dimen/dp60"
+        android:indeterminate="true"
+        app:cpb_color="@color/fastlane_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="@dimen/width_all_posterimage"
+            android:layout_height="@dimen/height_all_posterimage"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/bg_activityfilmdetail_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_filmdetail_overlay"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_all_titletv"
+            android:text="Justice League (2017)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_all_titletv"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liên minh công lý DC comic"
+            android:textAllCaps="false"
+            android:textColor="#a2a2a2"
+            android:textSize="@dimen/textsize_all_descriptiontextview"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <RatingBar
+            android:id="@+id/rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_all_ratingbar"
+            android:isIndicator="true"
+            android:max="5"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="0.5"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/description1" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginleft_all_yeartv"
+            android:layout_marginStart="@dimen/marginstart_all_yeartv"
+            android:text="2017"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_all_yeartv"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/rating"
+            app:layout_constraintLeft_toRightOf="@+id/rating"
+            app:layout_constraintTop_toTopOf="@+id/rating" />
+
+
+        <TextView
+            android:id="@+id/quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginleft_all_cctextview"
+            android:layout_marginStart="@dimen/marginstart_all_cctextview"
+            android:background="@drawable/bg_text_quality"
+            android:paddingBottom="@dimen/paddingtopbot_all_cctextview"
+            android:paddingLeft="@dimen/paddingleftright_all_cctextview"
+            android:paddingRight="@dimen/paddingleftright_all_cctextview"
+            android:paddingTop="@dimen/paddingtopbot_all_cctextview"
+            android:text="HD"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/rating"
+            app:layout_constraintLeft_toRightOf="@+id/year"
+            app:layout_constraintTop_toTopOf="@+id/rating" />
+
+
+        <TextView
+            android:id="@+id/tv_dienvien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Diên Viên: "
+            android:textAllCaps="false"
+            android:textColor="#a2a2a2"
+            android:textSize="@dimen/textsize_filmdetail_description2tv"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+        <TextView
+            android:id="@+id/dienvien"
+            android:layout_width="@dimen/dp300"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginleft_all_yeartv"
+            android:layout_marginStart="@dimen/marginstart_all_yeartv"
+            android:layout_marginTop="@dimen/dp10"
+            android:maxLines="2"
+            android:text="ronaldo"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textsize_filmdetail_description2tv"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_dienvien"
+            app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+        <TextView
+            android:id="@+id/tv_daodien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="Đạo Diễn: "
+            android:textAllCaps="false"
+            android:textColor="#a2a2a2"
+            android:textSize="@dimen/textsize_filmdetail_description2tv"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/dienvien" />
+
+        <TextView
+            android:id="@+id/daodien"
+            android:layout_width="@dimen/width_filmdetail_description2tv"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:lines="2"
+            android:text="Đạo Diễn: "
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textsize_filmdetail_description2tv"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_daodien"
+            app:layout_constraintTop_toBottomOf="@+id/dienvien" />
+
+        <TextView
+            android:id="@+id/ibmrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginleft_all_cctextview"
+            android:layout_marginStart="@dimen/marginstart_all_cctextview"
+            android:background="@drawable/bg_text_quality"
+            android:paddingBottom="@dimen/paddingtopbot_all_cctextview"
+            android:paddingLeft="@dimen/paddingleftright_all_cctextview"
+            android:paddingRight="@dimen/paddingleftright_all_cctextview"
+            android:paddingTop="@dimen/paddingtopbot_all_cctextview"
+            android:text="IBM 8.5"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/rating"
+            app:layout_constraintLeft_toRightOf="@+id/quality"
+            app:layout_constraintTop_toTopOf="@+id/rating" />
+
+        <TextView
+            android:id="@+id/description2"
+            android:layout_width="@dimen/width_filmdetail_description2tv"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_filmdetail_description2tv"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:text="Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince."
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#a2a2a2"
+            android:textSize="@dimen/textsize_filmdetail_description2tv"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_daodien" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/dp42"
+            android:layout_height="@dimen/dp42"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/selector_back"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            android:padding="@dimen/dp5"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintRight_toLeftOf="@+id/title"
+            app:layout_constraintTop_toTopOf="@+id/title" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/size_filmdetail_beginguideline1" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/size_filmdetail_beginguideline2" />
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/seasons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/description2"
+            app:layout_constraintVertical_bias="1.0"
+            app:scrollMode="scrollCenteringPosition"
+            app:scrollingEdge="0dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
