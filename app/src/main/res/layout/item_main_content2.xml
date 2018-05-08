@@ -19,6 +19,62 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
+    <ImageView
+        android:id="@+id/imageBlur"
+        android:layout_width="@dimen/dp230"
+        android:layout_height="@dimen/dp350"
+        android:layout_marginBottom="@dimen/dp8"
+        android:background="@color/black_blur"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/imagePlay"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_play"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintLeft_toLeftOf="@id/imageView"
+        app:layout_constraintRight_toRightOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_textview_red"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:text="HD"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_textview_green"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:text="T-1"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView" />
+
     <LinearLayout
         android:id="@+id/iconLive"
         android:layout_width="wrap_content"
@@ -59,9 +115,9 @@
     <TextView
         android:id="@+id/title_sub"
         android:layout_width="@dimen/dp230"
-        android:lines="1"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp8"
+        android:lines="1"
         android:text="Sát Thủ Bắc Kinh"
         android:textColor="#737373"
         android:textSize="@dimen/sp18"
@@ -71,8 +127,8 @@
 
     <RelativeLayout
         android:layout_width="@dimen/dp230"
-        android:orientation="horizontal"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title_sub">
 
@@ -89,9 +145,9 @@
             android:id="@+id/tv_quality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp8"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp8"
             android:text="HD"
             android:textColor="#cfcfcf"
             android:textSize="@dimen/sp15" />

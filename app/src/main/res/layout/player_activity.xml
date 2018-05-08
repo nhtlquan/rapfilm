@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:use_controller="false" />
+
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        android:id="@+id/loading"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/controler">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_english_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Flash"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_vietnam_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Người hùng tốc độ"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_english_title" />
+        </android.support.constraint.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_episode_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/infor_gradient_background"
+            android:paddingBottom="7dp"
+            android:paddingLeft="23dp"
+            android:paddingRight="23dp"
+            android:visibility="gone">
+
+            <TextView
+                fontPath="fonts/Roboto-Italic.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/cv_vod_episode"
+                android:layout_marginTop="5dp"
+                android:text="(*) Nhấn back để quay lại"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cv_vod_episode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_navigation_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/infor_gradient_background"
+            android:paddingBottom="25dp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp">
+
+            <TextView
+                android:id="@+id/tv_total_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="6dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="--:--"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="--:--"
+                android:textColor="@color/white" />
+
+            <SeekBar
+                android:id="@+id/sb_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_total_duration"
+                android:layout_marginBottom="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxHeight="3dp"
+                android:progressDrawable="@drawable/seekbar_progress_drawable"
+                android:thumb="@drawable/seekbar_thumb_drawable"
+                android:thumbOffset="0dp" />
+
+            <Button
+                android:id="@+id/bt_episode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_list_media"
+                android:drawablePadding="7dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusRight="@+id/bt_previous"
+                android:padding="0dp"
+                android:text="Tập 1"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/bt_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_rewind"
+                android:nextFocusRight="@+id/bt_forward"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_pause_media">
+
+                <requestFocus />
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/bt_rewind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toStartOf="@+id/bt_play"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_previous"
+                android:nextFocusRight="@+id/bt_play"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_pre_media" />
+
+            <ImageButton
+                android:id="@+id/bt_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/bt_play"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_play"
+                android:nextFocusRight="@+id/bt_next"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_next_media" />
+
+            <ImageButton
+                android:id="@+id/bt_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_toStartOf="@+id/bt_rewind"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_episode"
+                android:nextFocusRight="@+id/bt_rewind"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_rewind_button" />
+
+            <ImageButton
+                android:id="@+id/bt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/bt_forward"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_forward"
+                android:nextFocusRight="@+id/bt_setting"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_forward_media" />
+
+            <ImageButton
+                android:id="@+id/bt_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/sb_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@+id/bt_next"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_setting_media" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
+

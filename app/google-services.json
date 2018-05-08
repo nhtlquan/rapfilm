@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "773177347210",
+    "firebase_url": "https://rapfilm-53598.firebaseio.com",
+    "project_id": "rapfilm-53598",
+    "storage_bucket": "rapfilm-53598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773177347210:android:90fd205fbb7c439b",
+        "android_client_info": {
+          "package_name": "com.example.rapfilm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773177347210-n9g3044sn94o0t9vgaucg169s39mpr2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rapfilm",
+            "certificate_hash": "a244f5e0007b43f733f1f1574cba95402260f2e9"
+          }
+        },
+        {
+          "client_id": "773177347210-n94b728bn7hruthbfhu3sa439u06fp03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAayyCPFQ2QUFrqEesslZijuCiNaiLcxWU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773177347210-n94b728bn7hruthbfhu3sa439u06fp03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

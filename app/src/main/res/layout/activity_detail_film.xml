@@ -229,7 +229,7 @@
             app:layout_constraintTop_toTopOf="@+id/title" />
 
 
-        <com.example.lequan.film.ChildFocusLinearLayout
+        <com.example.rapfilm.ChildFocusLinearLayout
             android:id="@+id/control"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -300,7 +300,7 @@
                 android:textAllCaps="false"
                 android:textSize="@dimen/textsize_filmdetail_buttoncontrol" />
 
-        </com.example.lequan.film.ChildFocusLinearLayout>
+        </com.example.rapfilm.ChildFocusLinearLayout>
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"

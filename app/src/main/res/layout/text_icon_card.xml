@@ -153,7 +153,7 @@
             android:textColor="@color/white"
             android:textSize="18.0sp" />
 
-        <com.example.lequan.film.custom.CircleImageView
+        <com.example.rapfilm.custom.CircleImageView
             android:id="@id/imgAvatar"
             android:layout_width="64.0dip"
             android:layout_height="64.0dip"

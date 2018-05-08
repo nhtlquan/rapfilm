@@ -13,7 +13,7 @@
     <color name="background_gradient_start">#ff000000</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <color name="black">#59000000</color>
+    <color name="black">#000000</color>
     <color name="black_opaque">#aa000000</color>
     <color name="blood_dark">#ffda4314</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -158,4 +158,15 @@
     <color name="color_not_focus_button">#4f4e4e</color>
     <color name="color_search">#4c000000</color>
     <color name="color_not_focus_back">#00a2a2a2</color>
+    <color name="colorOrangle90">#f28831</color>
+    <color name="colorPink">#84091e</color>
+    <color name="colorPink_focus">#a94657</color>
+    <color name="colorPink50">#1ae80453</color>
+    <color name="colorPink90">#e80453</color>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="pink">#E80453</color>
+    <color name="black_blur">#83000000</color>
+    <color name="red">#ba400e</color>
+    <color name="green">#4a90e2</color>
 </resources>

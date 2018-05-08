@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_english_title"
+            android:layout_width="wrap_content"
+            android:text="The Flash"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_vietnam_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Người hùng tốc độ"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_episode_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:paddingBottom="7dp"
+        android:paddingLeft="23dp"
+        android:paddingRight="23dp"
+        android:visibility="gone">
+
+        <android.support.v17.leanback.widget.VerticalGridView
+            android:id="@+id/cv_vod_episode"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/cv_vod_episode"
+            android:layout_marginTop="5dp"
+            android:text="hello"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_navigation_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/infor_gradient_background"
+        android:paddingBottom="25dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp">
+
+        <TextView
+            android:id="@+id/tv_total_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/white" />
+
+        <SeekBar
+            android:id="@+id/sb_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_duration"
+            android:layout_marginBottom="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:maxHeight="3dp"
+            android:progressDrawable="@drawable/seekbar_progress_drawable"
+            android:thumb="@drawable/seekbar_thumb_drawable"
+            android:thumbOffset="0dp" />
+
+        <Button
+            android:id="@+id/bt_episode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sb_duration"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_list_media"
+            android:drawablePadding="7dp"
+            android:nextFocusRight="@+id/bt_previous"
+            android:padding="0dp"
+            android:text="Tập 1"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <ImageButton
+            android:id="@+id/bt_play"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_rewind"
+            android:nextFocusRight="@+id/bt_forward"
+            android:src="@drawable/ic_play_media">
+
+            <requestFocus />
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/bt_rewind"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toStartOf="@+id/bt_play"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_previous"
+            android:nextFocusRight="@+id/bt_play"
+            android:src="@drawable/ic_pre_media" />
+
+        <ImageButton
+            android:id="@+id/bt_forward"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/bt_play"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_play"
+            android:nextFocusRight="@+id/bt_next"
+            android:src="@drawable/icon_next_media" />
+
+        <ImageButton
+            android:id="@+id/bt_previous"
+            android:scaleType="fitXY"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_toStartOf="@+id/bt_rewind"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_episode"
+            android:nextFocusRight="@+id/bt_rewind"
+            android:src="@drawable/ic_rewind_button" />
+
+        <ImageButton
+            android:id="@+id/bt_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/bt_forward"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_forward"
+            android:nextFocusRight="@+id/bt_setting"
+            android:src="@drawable/ic_forward_media" />
+
+        <ImageButton
+            android:id="@+id/bt_setting"
+            android:layout_width="48dp"
+            android:scaleType="fitXY"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/sb_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:nextFocusLeft="@+id/bt_next"
+            android:src="@drawable/ic_setting_media" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cv_vod_bitrate"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_navigation_button_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="4dp"
+        android:visibility="visible" />
+</RelativeLayout>

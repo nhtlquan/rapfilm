@@ -1,4 +1,4 @@
-package com.example.lequan.film;
+package com.example.rapfilm;
 
 import org.junit.Test;
 
