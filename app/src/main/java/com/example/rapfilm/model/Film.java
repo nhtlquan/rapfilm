@@ -24,7 +24,15 @@ public class Film implements Serializable {
     private int view;
     private String year;
     private long curent_history = 0;
+    private Episode curent_episode;
 
+    public Episode getCurent_episode() {
+        return curent_episode;
+    }
+
+    public void setCurent_episode(Episode curent_episode) {
+        this.curent_episode = curent_episode;
+    }
 
     public long getCurent_history() {
         return curent_history;

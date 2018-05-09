@@ -187,7 +187,7 @@ public class DetailActivityFilm extends AppCompatActivity implements View.OnClic
             if (jsonElement.getAsJsonObject().get("status").getAsBoolean()) {
                 JsonElement poster;
                 Gson gson = new Gson();
-                mFilmDetail = (FilmDetail) gson.fromJson(jsonElement.getAsJsonObject().get("data"), FilmDetail.class);
+                mFilmDetail = gson.fromJson(jsonElement.getAsJsonObject().get("data"), FilmDetail.class);
                 Log.e("mFillmDetails", "filmDetails slug = " + mFilmDetail.getSlug());
                 if (mFilmDetail.isRate()) {
                     mFilmDetail.setMark(jsonElement.getAsJsonObject().get("data").getAsJsonObject().get("mark").getAsInt());
@@ -205,7 +205,7 @@ public class DetailActivityFilm extends AppCompatActivity implements View.OnClic
                     poster = jsonElement.getAsJsonObject().get("data").getAsJsonObject().get("cover");
                 }
                 if (poster.isJsonObject()) {
-                    mFilmDetail.setCoverFilm((Poster) gson.fromJson(poster, Poster.class));
+                    mFilmDetail.setCoverFilm(gson.fromJson(poster, Poster.class));
                 } else {
                     mFilmDetail.setCoverFilm(null);
                 }
@@ -241,6 +241,7 @@ public class DetailActivityFilm extends AppCompatActivity implements View.OnClic
         SugggessContentAdapter sugggessContentAdapter = new SugggessContentAdapter(mFilmDetail.getSuggestion(), new OnItemClickListener() {
             @Override
             public void onItemClicked(int position) {
+                film = mFilmDetail.getSuggestion().get(position);
                 mFilmID = mFilmDetail.getSuggestion().get(position).getId();
                 loadDetailSub = FilmApi.detailFilm(DetailActivityFilm.this, mFilmID).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new C05411());
             }

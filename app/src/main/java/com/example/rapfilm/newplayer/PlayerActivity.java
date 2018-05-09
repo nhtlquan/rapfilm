@@ -203,6 +203,7 @@ public class PlayerActivity extends Activity
     private Handler handler;
     private CountDownTimer countDownTimer;
     private boolean ishowHistory = false;
+    private long time_seekto;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -234,10 +235,13 @@ public class PlayerActivity extends Activity
         bt_play = findViewById(R.id.bt_play);
         bt_rewind = findViewById(R.id.bt_rewind);
         bt_forward = findViewById(R.id.bt_forward);
+
         bt_previous = findViewById(R.id.bt_previous);
         bt_next = findViewById(R.id.bt_next);
+
         bt_setting = findViewById(R.id.bt_setting);
         bt_episode = findViewById(R.id.bt_episode);
+
 
         playerView.setOnTouchListener((v, event) -> {
             if (MotionEvent.ACTION_UP == event.getAction()) {
@@ -373,7 +377,7 @@ public class PlayerActivity extends Activity
             return;
         if (player != null) {
             mFilm.setCurent_history(player.getCurrentPosition());
-            Debug.e(player.getCurrentPosition() + "");
+            mFilm.setCurent_episode(mEpisode);
         }
         if (checkFilmHistory()) {
             for (int i = 0; i < Utils.getHistory(this).size(); i++) {
@@ -452,7 +456,17 @@ public class PlayerActivity extends Activity
 
 
     private void loadDetailFilm() {
-        ishowHistory = false;
+        if (!ishowHistory) {
+            ishowHistory = true;
+            for (Film film : Utils.getHistory(PlayerActivity.this)) {
+                if (film.getId().equals(mFilm.getId())) {
+                    if (film.getCurent_history() > 1000) {
+                        showDialogHistory(film);
+                    }
+                    return;
+                }
+            }
+        }
         bt_episode.setText(mEpisode.getName());
         tv_english_title.setText(mFilmName);
         tv_vietnam_title.setText(mFilmName_vi);
@@ -891,25 +905,16 @@ public class PlayerActivity extends Activity
                     tv_total_duration.setText(textDur);
                     seekBar.setMax(secNum);
                     seekBar.setKeyProgressIncrement(6);
-                    if (!ishowHistory) {
-                        ishowHistory = true;
-                        for (Film film : Utils.getHistory(PlayerActivity.this)) {
-                            if (film.getId().equals(mFilm.getId())) {
-                                if (film.getCurent_history() > 1000) {
-                                    player.setPlayWhenReady(false);
-                                    Debug.e("Fuck phet");
-                                    showDialogHistory(film);
-                                }
-                                break;
-                            }
-                        }
+                    if (time_seekto > 0) {
+                        player.seekTo(time_seekto);
+                        time_seekto = 0;
                     }
+
                     if (player.getPlayWhenReady())
                         creatWachtLog();
                 }
             }
             if (playbackState == Player.STATE_BUFFERING)
-
             {
                 circularProgressBar.setVisibility(View.VISIBLE);
             }
@@ -998,20 +1003,22 @@ public class PlayerActivity extends Activity
         );
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("THÔNG BÁO")
-                .setMessage(Html.fromHtml("<i>" + film.getName_vi() + "</i>" + " bạn đang xem " + time + ", bạn có muốn xem tiếp không?"))
+                .setMessage(Html.fromHtml("<i>" + film.getName_vi() + "</i>" + " (" + film.getCurent_episode().getName() + ")" + " bạn đang xem " + time + ", bạn có muốn xem tiếp không?"))
                 .setPositiveButton("Xem tiếp",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                player.seekTo(film.getCurent_history());
-                                player.setPlayWhenReady(true);
+                                mEpisode = film.getCurent_episode();
+                                episodeID = film.getCurent_episode().getId();
+                                loadDetailFilm();
+                                time_seekto = film.getCurent_history();
                             }
                         })
                 .setNegativeButton("Hủy",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                player.setPlayWhenReady(true);
+                                loadDetailFilm();
                             }
                         }).create();
         dialog.setCancelable(false);
